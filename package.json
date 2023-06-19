@@ -9,7 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.8",
     "@openzeppelin/contracts": "^4.9.2",
+    "ethers": "^6.6.0",
     "expect": "^29.5.0",
     "hardhat": "^2.15.0"
   },
