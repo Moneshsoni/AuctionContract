@@ -36,7 +36,7 @@ contract EnglishAuction {
     }
 
     function start() external {
-        require(!started, "started");
+        require(!started, "Bidding started");
         require(msg.sender == seller, "not seller");
 
         nft.transferFrom(msg.sender, address(this), nftId);
