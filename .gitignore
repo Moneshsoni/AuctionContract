@@ -3,10 +3,10 @@ node_modules
 coverage
 coverage.json
 package-lock.json
+yarn.lock
 typechain
 typechain-types
 
 # Hardhat files
 cache
 artifacts
-
