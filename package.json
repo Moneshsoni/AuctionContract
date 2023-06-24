@@ -11,9 +11,8 @@
   "dependencies": {
     "@nomicfoundation/hardhat-network-helpers": "^1.0.8",
     "@openzeppelin/contracts": "^4.9.2",
-
     "expect": "^29.5.0",
-    "hardhat": "^2.15.0"
+    "hardhat": "^2.16.0"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^3.0.0"
