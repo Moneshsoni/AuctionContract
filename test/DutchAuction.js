@@ -1,7 +1,7 @@
 const {
     loadFixture,
   } = require("@nomicfoundation/hardhat-toolbox/network-helpers");
-  const { expect } = require("chai");
+const { expect } = require("chai");
 const { time } = require('@nomicfoundation/hardhat-network-helpers');
 const {ethers} = require("hardhat");
 const { parseEther} = require("ethers")
@@ -49,25 +49,25 @@ describe("Dutch Auctions",function(){
         await expect( DutchAuction.buy({value:valueToSend})).to.be.revertedWith("ETH < price");
     })
 
-    // it("Should check ExpireAt",async ()=>{
-    //     let tokenId =4;
-    //     let startingPrice = 1000000;
-    //     let startAt;
-    //     let expiresAt;
-    //     let discountRate = 1;
+    it("Should check ExpireAt",async ()=>{
+        let tokenId =4;
+        let startingPrice = 1000000;
+        let startAt;
+        let expiresAt;
+        let discountRate = 1;
 
-    //     startAt = await time.latest();
-    //     expiresAt = startAt+1;
+        startAt = await time.latest();
+        expiresAt = startAt+1;
 
-    //     const [owner, addr1, addr2] = await ethers.getSigners();
-    //     const myToken = await ethers.deployContract("MyToken");
-    //     await myToken.safeMint(owner.address,tokenId);
+        const [owner, addr1, addr2] = await ethers.getSigners();
+        const myToken = await ethers.deployContract("MyToken");
+        await myToken.safeMint(owner.address,tokenId);
         
-    //     const DutchAuction = await ethers.deployContract("DutchAuction",[startingPrice,discountRate,myToken.target,tokenId]);
-    //     await myToken.approve(DutchAuction.target,tokenId);
-    //     const value = '1';
-    //     const valueToSend = parseEther(value);
-    //     await expect( DutchAuction.buy({value:valueToSend})).to.be.revertedWith("ETH < price");
+        const DutchAuction = await ethers.deployContract("DutchAuction",[startingPrice,discountRate,myToken.target,tokenId]);
+        await myToken.approve(DutchAuction.target,tokenId);
+        const value = '1';
+        const valueToSend = parseEther(value);
+        await expect( DutchAuction.buy({value:valueToSend})).to.be.revertedWith("ETH < price");
     
-    // })
+    })
 })
